@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova OTA</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Espaço para propagandas à esquerda -->
+        <div class="ads-left">
+            <!-- Coloque o código de propagandas aqui -->
+        </div>
+
+        <div class="main-container">
+            <h1>
+                <span class="nova">Nova</span><span class="ota">OTA</span>
+            </h1>
+
+            <div class="form-container">
+
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="version">Versão do Firmware:</label>
+                    <input type="text" id="version" name="version" placeholder="1.0.0.0" required>
+                    <br><br>
+
+                    <label for="key">Api Key:</label>
+                    <input type="text" id="key" name="key" placeholder="Insira uma Key" required>
+                    <button type="button" onclick="generateCode()">Gerar Key</button>
+                    <br><br>
+
+                    <div class="file-upload">
+                        <input type="file" id="firmware" name="firmware" accept=".bin" required>
+                        <label for="firmware">Escolher Firmware</label>
+                        <span id="file-name">Nenhum arquivo selecionado</span>
+                    </div>
+                    <br><br>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <br>
+                <!-- Exibição de mensagem de sucesso ou erro -->
+                <div id="feedback"></div>
+
+                <br><br>
+                <div class="log-container">
+                    <!-- Exibição dos logs recebidos via WebSocket -->
+                    <h2>Logs em Tempo Real</h2>
+                    <div id="logOutput" style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll;">
+                        Nenhum log recebido ainda.
+                    </div>
+                </div>
+
+                <br><br>
+                <div class="key-mac-form">
+                    <h3>Conectar via WebSocket</h3>
+                    <form id="wsForm">
+                        <label for="keylog">API Key:</label>
+                        <input type="text" id="keylog" placeholder="Insira a Key para conectar" required>
+                        <br><br>
+                        <label for="mac">MAC do Dispositivo:</label>
+                        <input type="text" id="mac" placeholder="Insira o MAC do dispositivo" required>
+                        <br><br>
+                        <button type="submit">Conectar</button>
+                    </form>
+                </div>
+
+                <br><br>
+                <h2>Modo de Usar</h2>
+
+                <ul>
+                    <li>Utilize um número de versão diferente da atual no dispositivo, independentemente de ser maior ou menor.</li>
+                    <li>Guarde a API Key para futuras atualizações.</li>
+                    <li>Gere uma nova API Key se ainda não tiver uma. Caso já tenha gerado, utilize a mesma, pois o código fará referência a ela.</li>
+                    <li>Se desejar trocar a API Key, gere uma nova e insira-a na versão atualizada do código. No entanto, use a antiga para fazer o upload do novo firmware e, a partir da próxima atualização, utilize a nova.</li>
+                    <li>Após enviar um firmware novo, o antigo será apagado. Portanto, faça backup do firmware anterior, caso precise reverter para uma versão antiga.</li>
+                    <li>Sempre gere o binário do firmware com a partição adequada para OTA (Over-the-Air), caso contrário, a próxima atualização não será possível.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Espaço para propagandas à direita -->
+        <div class="ads-right">
+            <!-- Coloque o código de propagandas aqui -->
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

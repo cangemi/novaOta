@@ -1,0 +1,139 @@
+body {
+    background-color: #1E1E1E;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: flex-start;
+    width: 100%;  /* Certifica-se de que o conteúdo ocupe 100% da largura */
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.ads-left, .ads-right {
+    width: 20%;
+    height: 100%;
+    background-color: #f0f0f0; /* Cor de fundo das áreas de propaganda */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.main-container{
+    width: 70%;
+    text-align: center;
+    padding: 0px 60px 60px 60px;
+}
+
+.form-container {
+   
+    text-align: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 64px;
+    margin-top: 0;
+}
+
+h1 .nova {
+    color: #1893F9;
+}
+
+h1 .ota {
+    color: #fff;
+}
+
+form {
+    margin-top: 10px;
+    text-align: left;
+}
+
+form .form-row {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+form label {
+    width: 30%;  /* Ajusta a largura do label */
+    margin-right: 10px;  /* Espaçamento entre o label e o campo */
+    font-size: 24px;
+}
+
+form input, form button {
+    width: 65%;  /* Ajusta a largura do input e botão */
+    padding: 10px;
+    box-sizing: border-box;  /* Inclui o padding no cálculo da largura */
+}
+
+form input[type="file"] {
+    padding: 0;
+}
+
+form button {
+    width: auto;
+    background-color: #1893F9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 35px;
+}
+
+form button:hover {
+    background-color: #1893F9;
+}
+
+.file-upload {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.file-upload input[type="file"] {
+    display: none; /* Esconde o input padrão */
+}
+
+.file-upload label {
+    display: inline-block;
+    background-color: #1893F9; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 12px 20px; /* Espaçamento interno */
+    font-size: 14px;
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload label:hover {
+    background-color: #1477CC; /* Cor de fundo ao passar o mouse */
+}
+
+.file-upload label:active {
+    background-color: #0F5C99; /* Cor de fundo ao clicar */
+}
+
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.key-mac-form {
+    text-align: center;
+    padding: 20px 80px 80px 30px;
+    box-sizing: border-box;
+}
